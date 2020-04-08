@@ -1,0 +1,25 @@
+
+<div class="card" style="width: 20rem;" >
+	<div class="card">
+	{% if instance.image %}
+	  <a href="{{ instance.get_absolute_url }}"><img src="{{instance.image.url}}" class="card-img-top" alt="{{ instance.title }} logo"></a>
+	{% else %}
+	  	<a href="{{ instance.get_absolute_url }}" style="font-size: 56px;"><img src="{{instance.title}}" class="card-img-top" alt="Image Not Found"> </a>
+	  	<br><br>
+	{% endif %}
+	</div>
+  <div class="card-body">
+    <h4 class="card-title">{{ instance.title }}</h4>
+    <p class="card-text">{{ instance.description|linebreaks|truncatewords:4 }}</p>
+    <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">View</a>
+    
+    {% include 'products/snippets/update-cart.html' with product=instance cart=cart %}
+
+    <!-- <a href="{% url 'shopping:detail' slug=instance.slug %}" class="btn btn-warning">URL PROFILE LINK</a> -->
+  </div>
+</div>
+<br>
+
+
+<!-- 
+<a href="{{ instance.get_absolute_url }}" style="font-size: 60px;"><img src="{{instance.title}}" class="card-img-top" alt="{{ instance.title }} --> <!-- logo"> <br><br><br> </a>  -->

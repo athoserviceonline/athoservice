@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+<title>contactview Templates</title>
+{% endblock %}
+<!-- 
+{% block base_head %}
+<link rel="stylesheet" type="text/css" href='{% static "css/main.css" %}'>
+{% endblock %} -->
+
+{% block content %}
+
+<div class="text-center">
+	<h1>{{title}}</h1>
+<h2>Hello, world!</h2>
+</div>
+<div class="row">
+<div class="col">
+	<div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+		<p>{{content}}</p>
+		<form class="contact-form" method="POST" action='{% url "contact" %}'> {% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	</div>
+</div>
+</div>
+
+{% endblock %}

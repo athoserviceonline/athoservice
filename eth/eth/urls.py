@@ -1,0 +1,83 @@
+"""eth URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from django.conf.urls import url,include
+
+from billing.views import payment_method_view, payment_method_createview
+
+    #login_page,
+   # logout_page,
+from accounts.views import  LoginView, RegisterView, guest_register_view
+
+from django.contrib.auth.views import LogoutView
+
+from shopping.views import (
+    HomeView,
+    AboutView, 
+    ContactView, 
+    )
+
+from cart.views import cart_detail_api_view
+
+from addresses.views import checkout_address_create_view, checkout_address_reuse_view
+
+
+from django.views.generic import TemplateView
+
+from marketing.views import MarketingPreferenceUpdateView, MailchimpWebhookView
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^$',HomeView,name='home'),
+    url(r'^about/$', AboutView,name='about'),
+    url(r'^contact/$', ContactView,name='contact'),
+    url(r'^login/$', LoginView.as_view(),name='login'),
+    #url(r'^login/$', login_page,name='login'),
+#    url(r'^logout1/$', logout_page,name='logout'),
+    url(r'^logout/$', LogoutView.as_view(),name='logout'),
+    url(r'^api/cart/$', cart_detail_api_view,name='api-cart'),
+    # url(r'^register/$', register_page,name='register'),
+    url(r'^register/$', RegisterView.as_view() ,name='register'),
+    url(r'^register/guest$',guest_register_view ,name='guest_register'),
+    url(r'^bootstrap/$', TemplateView.as_view(template_name='bootstrap/nipan.html')),
+
+    url(r'^checkout/address/create$',checkout_address_create_view,name='checkout_address_create'),
+
+    url(r'^checkout/address/reuse$',checkout_address_reuse_view,name='checkout_address_reuse'),
+
+    url(r'^billing/payment-method', payment_method_view, name='billing-payment-method'),
+    
+
+    url(r'^payment-method/create', payment_method_createview, name='billing-payment-method-endpoint'),    
+
+    url(r'^cart/', include(("cart.urls", 'cart'), namespace='cart')),
+    
+    url(r'^products/',include(("shopping.urls", 'shopping'), namespace='shopping')),
+
+    url(r'^search/',include(("search.urls", 'search'), namespace='search')),
+#marketing_that_is_mailchimp
+    url(r'^settings/email/$', MarketingPreferenceUpdateView.as_view(), name='marketing-pref'),
+    
+    url(r'^webhooks/mailchimp/$', MailchimpWebhookView.as_view(), name='webhooks-mailchimp'),
+
+]
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+    urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

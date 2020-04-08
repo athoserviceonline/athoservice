@@ -1,0 +1,58 @@
+[
+{
+    "model": "shopping.product",
+    "pk": 1,
+    "fields": {
+        "title": "t-shirt",
+        "slug": "t-shirt",
+        "description": "this is a great shirt u can buy it......:-)",
+        "price": "39.99",
+        "image": "",
+        "featured": false,
+        "active": true,
+        "timestamp": "2020-01-12T19:44:54.002Z"
+    }
+},
+{
+    "model": "shopping.product",
+    "pk": 2,
+    "fields": {
+        "title": "pant",
+        "slug": "pant",
+        "description": "this is new model pant which i can give u idea how i can improve",
+        "price": "45.66",
+        "image": "products/3233605072/3233605072.jpeg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2020-01-12T19:44:54.002Z"
+    }
+},
+{
+    "model": "shopping.product",
+    "pk": 3,
+    "fields": {
+        "title": "supercomputer",
+        "slug": "master_of_all_computer",
+        "description": "it is super fast computer and intelligent computer",
+        "price": "99.99",
+        "image": "products/350746643/350746643.jpeg",
+        "featured": true,
+        "active": true,
+        "timestamp": "2020-01-12T19:44:54.002Z"
+    }
+},
+{
+    "model": "shopping.product",
+    "pk": 4,
+    "fields": {
+        "title": "tv 120 inch",
+        "slug": "tv120inch",
+        "description": "Enjoy dramatically richer intensity, detail, contrast and depth for a surreal viewing experience with the FL120. See the most vibrant whites and deepest blacks for an incomparable level of contrast and clarity in any environment. Rows of LEDs are spread across the entire back panel of the monitor. Using a feature called local dimming, the LEDs are divided into 384 zones that can be individually controlled and portions of the backlight dimmed whilst other areas remain illuminated. The result? A contrast ratio of 100 million: 1, rich black levels, great contrast and brightness and deep natural colour, like no other.\r\n\r\nA Picture of Perfection in Any Environment\r\n\r\nDigital Signage\r\nFL\u2019s complete ultra HD picture quality enables brands to offer viewers an outstanding viewing experience of their advertising content - 24/7. The specially designed panel delivers true colour from any angle with 4 times the resolution of Full HD.With the FL120, every seat has the perfect viewing angle.\r\n\r\nRetail\r\nEnjoy the new standard of high definition and dynamic contrast. With stunning 16.7 million colours for flawless pictures and incredibly vivid detail, it displays every colour and shade in their natural state. The sleek frame looks perfect in any environment, be it an art gallery, a lounge or a grand lobby.",
+        "price": "39.99",
+        "image": "",
+        "featured": false,
+        "active": true,
+        "timestamp": "2020-01-12T19:44:54.002Z"
+    }
+}
+]

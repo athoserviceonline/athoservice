@@ -1,0 +1,28 @@
+{% url 'register' as register_url %}
+{% url 'login' as login_url %}
+
+<div class="container-fluid text-center mt-5" style="border:1px solid black;">
+	<form method="POST" action="{% if action_url %}{{ action_url }}{% else %}{% url 'login' %}{% endif %}"> {% csrf_token %}
+        {% if next_url %}
+        <input type="hidden" name="next" value="{{ next_url }}">
+        {% endif %}
+		{% for field in form %}
+
+        <div class="form-group">
+            <label class="col-sm-8 control-label" for="{{ field.name }}">{{ field.label }} : </label>
+
+            <div class="col-sm-12">
+                {{ field }}
+            </div>
+        </div>
+
+     {% endfor %}
+        <div class="text-center">
+		  <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+	</form>
+	{% if guest_register_url %}
+    {% else %}
+    <p class="mt-5 text-center">not registered? <a href="{{ register_url }}">register</a></p>
+	{% endif %}
+</div>

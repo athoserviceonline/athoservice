@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+<title>Details product</title>
+{% endblock %}
+
+
+
+{% block content %}
+<br>
+	<div class="container">
+		<div class="row py-3">
+	{% for obj in object_list %}
+	<div class="col">
+			{{ forloop.counter }}
+			{% include 'products/snippets/card.html' with instance=obj %}
+
+
+{% cycle '<h1>Hello</h1>' ''%}
+
+
+
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="alert alert-secondary" role="alert">
+            <h2>nav</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <div class="alert alert-secondary" role="alert">
+            <h3>Home</h3>
+          </div>    
+        </div>
+        <div class="col-2 ml-auto">
+          <div class="alert alert-secondary" role="alert">
+            <input type="text" class="form-control" placeholder="Search">
+          </div> 
+        </div>
+      </div>  
+      <div class="row">
+        <div class="col-3">
+          <div class="alert alert-secondary" role="alert">
+            <h1>Hello</h1>
+          </div>
+          <div class="alert alert-primary no-gutters" role="alert" style="min-height: 700px">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-6 mx-auto">
+          <div class="alert alert-primary" role="alert" style="min-height: 800px">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-3 ml-auto mr-auto">
+          <div class="alert alert-primary" role="alert" style="min-height: 800px">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="alert alert-secondary" role="alert">
+            <h2>nav</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-3">
+          <div class="alert alert-primary" role="alert" style="min-height: 800px">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="alert alert-primary" role="alert" style="min-height: 800px">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="alert alert-primary" role="alert" style="min-height: 800px">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-1">
+          <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="alert alert-secondary" role="alert">
+            A simple secondary alert—check it out!
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+			<!-- {% if forloop.counter|divisibleby:3 %}
+		</div></div><div class="row"><div class="col-12"><hr/></div> 
+			{% elif forloop.counter|divisibleby:2 %}
+		</div></div><div class="row"><div class="col-12"><hr/></div>
+		{% else %}
+	</div>
+			{% endif %} -->
+
+
+	<!-- {% cycle '<h1>Hello There</h1>' '' %} -->
+<!-- 		<a href="{{ obj.get_absolute_url }}" class="bluetag">{{ obj.title }}</a> <br> -->
+
+	{% endfor %}
+</div>
+</div>
+{% endblock %}
+
+
+
+
+
+<!-- {{obj.description}}<br> -->
+
+<!-- {% block base_head %}
+<link rel="stylesheet" type="text/css" href='{% static "css/main.css" %}'> 
+{% endblock %}
+ -->
+
+
+<!-- <img src="{{ object.image2 }}" class="img-fluid" >
+ -->
+
+<!-- {{object_list}} -->
